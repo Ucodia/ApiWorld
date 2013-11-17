@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unirest-net", "unirest-net\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiWorld.Model", "ApiWorld.Model\ApiWorld.Model.csproj", "{FE980582-9114-4A3F-BFDA-CBD1115A61FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiWorld.WPF", "ApiWorld.WPF\ApiWorld.WPF.csproj", "{B1854CA1-9CB4-4FBC-992E-459DD4655239}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FE980582-9114-4A3F-BFDA-CBD1115A61FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE980582-9114-4A3F-BFDA-CBD1115A61FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE980582-9114-4A3F-BFDA-CBD1115A61FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1854CA1-9CB4-4FBC-992E-459DD4655239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1854CA1-9CB4-4FBC-992E-459DD4655239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1854CA1-9CB4-4FBC-992E-459DD4655239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1854CA1-9CB4-4FBC-992E-459DD4655239}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

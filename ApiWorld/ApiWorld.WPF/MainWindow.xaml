@@ -1,0 +1,19 @@
+﻿<Window x:Class="ApiWorld.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <DataTemplate x:Key="ApiItemTemplate">
+            <TextBlock Text="{Binding Name}"/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Margin="8" Content="Load" Click="Button_Click"/>
+        <ListBox Grid.Row="1" Margin="8,0,8,8" x:Name="ApiListBox"
+                 ItemTemplate="{DynamicResource ApiItemTemplate}"/>
+    </Grid>
+</Window>
