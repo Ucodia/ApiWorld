@@ -27,8 +27,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button Grid.Row="0" Margin="12,0,12,12" Content="Load" Click="Button_Click"/>
-            <ListBox Grid.Row="1" Margin="12,0,12,12"
-                     ItemsSource="{Binding Apis}" ItemTemplate="{StaticResource ApiItemTemplate}"/>
+            <ListBox Grid.Row="1" Margin="12,0,12,12" x:Name="ApiListBox"
+                     ItemTemplate="{StaticResource ApiItemTemplate}"/>
         </Grid>
     </Grid>
 </Page>

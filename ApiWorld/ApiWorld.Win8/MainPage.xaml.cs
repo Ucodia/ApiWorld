@@ -27,10 +27,7 @@ namespace ApiWorld.Win8
         {
             InitializeComponent();
 
-            DataContext = this;
-
             _apiService = new ApisService();
-            Apis = new ObservableCollection<Api>();
         }
 
         public ObservableCollection<Api> Apis { get; set; }
@@ -39,11 +36,11 @@ namespace ApiWorld.Win8
         {
             var apis = await _apiService.GetApis();
 
-            Apis.Clear();
+            ApiListBox.Items.Clear();
 
             foreach (var api in apis)
             {
-                Apis.Add(api);
+                ApiListBox.Items.Add(api);
             }
         }
     }
