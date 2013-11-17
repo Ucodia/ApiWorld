@@ -1,6 +1,7 @@
 ﻿using ApiWorld.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,14 +28,24 @@ namespace ApiWorld.WPF
         {
             InitializeComponent();
 
+            DataContext = this;
+
             _apiService = new ApisService();
+            Apis = new ObservableCollection<Api>();
         }
+
+        public ObservableCollection<Api> Apis { get; set; }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             var apis = await _apiService.GetApis();
 
-            // TODO: Clear and load elements into list
+            Apis.Clear();
+
+            foreach (var api in apis)
+            {
+                Apis.Add(api);
+            }
         }
     }
 }

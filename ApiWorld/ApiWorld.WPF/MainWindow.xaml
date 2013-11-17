@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Margin="8" Content="Load" Click="Button_Click"/>
-        <ListBox Grid.Row="1" Margin="8,0,8,8" x:Name="ApiListBox"
-                 ItemTemplate="{DynamicResource ApiItemTemplate}"/>
+        <ListBox Grid.Row="1" Margin="8,0,8,8"
+                 ItemsSource="{Binding Apis}" ItemTemplate="{DynamicResource ApiItemTemplate}"/>
     </Grid>
 </Window>
