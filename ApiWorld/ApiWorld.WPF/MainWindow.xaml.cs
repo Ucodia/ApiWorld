@@ -60,7 +60,7 @@ namespace ApiWorld.WPF
             }
             finally
             {
-                // 
+                // Reenable button
                 LoadButton.IsEnabled = true;
                 LoadButton.Content = string.Format("Load {0} more items", Limit);
             }
