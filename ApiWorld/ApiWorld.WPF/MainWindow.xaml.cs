@@ -30,13 +30,32 @@ namespace ApiWorld.WPF
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            var apis = await _apiService.GetApis();
+            LoadButton.IsEnabled = false;
+            LoadButton.Content = "Loading...";
 
-            ApiListBox.Items.Clear();
-
-            foreach (var api in apis)
+            try
             {
-                ApiListBox.Items.Add(api);
+                var apis = await _apiService.GetApis();
+
+                ApiListBox.Items.Clear();
+
+                foreach (var api in apis)
+                {
+                    ApiListBox.Items.Add(api);
+                }
+            }
+            catch (Exception ex)
+            {
+                var message = string.Format(
+                    "Oops, something went wrong. Here's the ugly details:\n{0}",
+                    ex.Message);
+
+                MessageBox.Show(message);
+            }
+            finally
+            {
+                LoadButton.IsEnabled = true;
+                LoadButton.Content = "Load";
             }
         }
     }
