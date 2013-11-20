@@ -15,7 +15,24 @@
 
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Key="ApiItemTemplate">
-            <TextBlock Text="{Binding Name}"/>
+            <Grid Height="76" Margin="0,0,0,8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="76"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Margin="8" Height="60" Width="60"
+                       Source="{Binding Image}"/>
+                <StackPanel Grid.Column="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,8,0,8"
+                                   Text="{Binding Name}" FontWeight="Bold"/>
+                        <TextBlock Margin="0,8,8,8"
+                                   Text="{Binding User.Username, StringFormat=' by {0}'}"/>
+                    </StackPanel>
+                    <TextBlock Margin="0,0,8,8"
+                               Text="{Binding Description}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
         </DataTemplate>
     </phone:PhoneApplicationPage.Resources>
     
