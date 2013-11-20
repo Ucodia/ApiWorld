@@ -21,6 +21,7 @@ namespace ApiWorld.WPF
     {
         private ApisService _apiService;
 
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,11 +36,11 @@ namespace ApiWorld.WPF
 
             try
             {
-                var apis = await _apiService.GetApis();
+                var result = await _apiService.GetApis();
 
                 ApiListBox.Items.Clear();
 
-                foreach (var api in apis)
+                foreach (var api in result.Apis)
                 {
                     ApiListBox.Items.Add(api);
                 }

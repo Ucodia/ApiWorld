@@ -34,11 +34,11 @@ namespace ApiWorld.Win8
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            var apis = await _apiService.GetApis();
+            var result = await _apiService.GetApis();
 
             ApiListBox.Items.Clear();
 
-            foreach (var api in apis)
+            foreach (var api in result.Apis)
             {
                 ApiListBox.Items.Add(api);
             }
