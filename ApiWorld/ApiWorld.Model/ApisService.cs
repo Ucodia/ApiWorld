@@ -14,9 +14,13 @@ namespace ApiWorld.Model
         private const string ApiKeyHeader = "X-Mashape-Authorization";
         private const string ApiKey = "yVCxJKR4Q6RhCrWsDs37auhuhRlN7MCV";
 
-        public async Task<IList<Api>> GetApis()
+        public async Task<IList<Api>> GetApis(string query = "", int limit = 20, int offset = 0, string category = "")
         {
-            var result = await Unirest.get(ApiUri)
+            var requestUrl = string.Format(
+                "{0}?query={1}&limit={2}&offset={3}&category={4}",
+                ApiUri, query, limit, offset, category);
+
+            var result = await Unirest.get(requestUrl)
                                       .header(ApiKeyHeader, ApiKey)
                                       .asJsonAsync<ApisResult>();
 
