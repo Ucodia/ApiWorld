@@ -1,24 +1,41 @@
-﻿<Window x:Class="ApiWorld.WPF.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Width="640" Height="480"
+        xmlns:Model="clr-namespace:ApiWorld.Model;assembly=ApiWorld.Model" x:Class="ApiWorld.WPF.MainWindow"
+        Width="800" Height="600" ResizeMode="NoResize"
         Title="Welcome to API World!">
-    
+
     <Window.Resources>
         <DataTemplate x:Key="ApiItemTemplate">
-            <TextBlock Text="{Binding Name}"/>
+            <Grid Height="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="560"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Margin="8" Height="80" Width="160"
+                       Source="{Binding Image}"/>
+                <StackPanel Grid.Column="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,8,0,8"
+                                   Text="{Binding Name}" FontWeight="Bold"/>
+                        <TextBlock Margin="0,8,8,8"
+                                   Text="{Binding User.Username, StringFormat=' by {0}'}"/>
+                    </StackPanel>
+                    <TextBlock Margin="0,0,8,8"
+                               Text="{Binding Description}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
         </DataTemplate>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Margin="8" x:Name="LoadButton"
-                Content="Load" Click="Button_Click"/>
+			Content="Load" Click="Button_Click"/>
         <ListBox Grid.Row="1" Margin="8,0,8,8" x:Name="ApiListBox"
-                 ItemTemplate="{DynamicResource ApiItemTemplate}"/>
+			     ItemTemplate="{DynamicResource ApiItemTemplate}"/>
     </Grid>
-    
+
 </Window>
