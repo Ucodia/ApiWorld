@@ -34,19 +34,24 @@
     </Page.Resources>
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Margin="32" Text="Welcome to API World!" FontSize="36"/>
+        <TextBlock Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Text="Welcome to API World!" FontSize="48"/>
 
-        <Grid Grid.Row="1" Margin="24,0,24,24">
+        <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" x:Name="LoadButton"
+            <Button Grid.Row="0" Margin="0,24" x:Name="LoadButton"
                     Content="Load" Click="Button_Click" FontSize="18"/>
             <GridView Grid.Row="1" Margin="0,24,0,0" x:Name="ApiListBox"
                       ItemTemplate="{StaticResource ApiItemTemplate}"/>
