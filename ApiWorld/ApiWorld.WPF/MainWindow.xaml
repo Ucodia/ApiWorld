@@ -15,10 +15,11 @@
                        Source="{Binding Image}"/>
                 <StackPanel Grid.Column="1">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="0,8,0,8"
-                                   Text="{Binding Name}" FontWeight="Bold"/>
-                        <TextBlock Margin="0,8,8,8"
-                                   Text="{Binding User.Username, StringFormat=' by {0}'}"/>
+                        <TextBlock Margin="0,8" FontSize="16">
+                            <Run Text="{Binding Name}" FontWeight="Bold"/>
+                            <Run Text="by"/>
+                            <Run Text="{Binding User.Username}"/>
+                        </TextBlock>
                     </StackPanel>
                     <TextBlock Margin="0,0,8,8"
                                Text="{Binding Description}" TextWrapping="Wrap"/>
