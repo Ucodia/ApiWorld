@@ -60,7 +60,7 @@ namespace ApiWorld.Win8
                     ex.Message);
 
                 var dialog = new MessageDialog(message);
-                //await dialog.ShowAsync();
+                dialog.ShowAsync();
             }
             finally
             {
