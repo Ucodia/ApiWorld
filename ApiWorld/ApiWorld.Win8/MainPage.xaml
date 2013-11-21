@@ -44,7 +44,7 @@
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Text="Welcome to API World!" FontSize="48"/>
+        <TextBlock Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" Text="Welcome to ApiWorld!" FontSize="48"/>
 
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
