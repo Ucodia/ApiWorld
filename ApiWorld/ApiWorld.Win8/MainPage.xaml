@@ -18,13 +18,11 @@
                 <Image Grid.Column="0" Margin="8" Height="80" Width="160"
                        Source="{Binding Image}"/>
                 <StackPanel Grid.Column="1" Margin="8,0,0,0">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="0,8" FontSize="18">
+                    <TextBlock Margin="0,8" FontSize="18">
                             <Run Text="{Binding Name}" FontWeight="Bold"/>
                             <Run Text="by"/>
                             <Run Text="{Binding User.Username}"/>
-                        </TextBlock>
-                    </StackPanel>
+                    </TextBlock>
                     <TextBlock Margin="0,0,8,8"
                                Text="{Binding Description}" TextWrapping="Wrap"/>
                 </StackPanel>
